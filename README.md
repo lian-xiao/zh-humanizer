@@ -6,9 +6,6 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![AgentSkills](https://img.shields.io/badge/AgentSkills-Standard-green.svg)](https://agentskills.io)
-[![Language: Chinese](https://img.shields.io/badge/Language-ZH-red.svg)](README_ZH.md)
-
-中文文档：**README_ZH.md**
 
 ---
 
@@ -83,7 +80,6 @@ zh-humanizer/
 │   └── publish-to-github.ps1
 ├── INSTALL.md
 ├── README.md
-├── README_ZH.md
 ├── CONTRIBUTING.md
 ├── LICENSE
 └── .gitignore
