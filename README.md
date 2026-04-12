@@ -54,6 +54,30 @@ zh-humanizer/
 - 初始版本：`v1.0.0`
 - 后续更新建议遵循语义化版本（SemVer）：`MAJOR.MINOR.PATCH`
 
+## 发布到 GitHub
+
+### 1. 在 GitHub 新建空仓库
+
+仓库名建议：`zh-humanizer`
+
+### 2. 在本地仓库根目录执行
+
+```powershell
+./scripts/publish-to-github.ps1 -RepoUrl "https://github.com/<your-username>/zh-humanizer.git"
+```
+
+如果你更偏好 SSH，也可以传入：
+
+```powershell
+./scripts/publish-to-github.ps1 -RepoUrl "git@github.com:<your-username>/zh-humanizer.git"
+```
+
+脚本会自动：
+
+- 配置/更新 `origin` 远程
+- 推送当前分支
+- 推送全部标签（包含 `v1.0.0`）
+
 ## 贡献
 
 欢迎提交 Issue 和 Pull Request，帮助补充更多中文 AI 写作模式和高质量改写样例。
