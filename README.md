@@ -1,42 +1,63 @@
-# zh-humanizer
+# zh-humanizer.skill
 
-中文文本去 AI 痕迹技能（Skill）。
+中文文本去 AI 痕迹优化 Skill。
 
-目标：在不改变原始事实和立场的前提下，降低中文文本中的模板化 AI 写作特征，让表达更自然、更像真人写作。
+在不改变事实、数据和立场的前提下，识别并消除常见 AI 写作模式，让文本更自然、更像真人写作。
 
-## 功能亮点
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![AgentSkills](https://img.shields.io/badge/AgentSkills-Standard-green.svg)](https://agentskills.io)
+[![Language: Chinese](https://img.shields.io/badge/Language-ZH-red.svg)](README_ZH.md)
 
-- 识别并处理常见 AI 写作模式：宏大叙事、机械三点结构、高频套话、模板化结尾等
-- 保持原意不变：不新增事实、不编造数据、不改变立场
-- 保持文风一致：支持学术、商务、通用等风格约束
-- 篇幅可控：约束在原文的 3/4 到 5/4 之间
+中文文档：**README_ZH.md**
 
-## 仓库结构
+---
 
-```text
-zh-humanizer/
-  SKILL.md
-  references/
-    ai-patterns.md
+## 导航
+
+[安装](#安装) · [使用](#使用) · [功能特性](#功能特性) · [项目结构](#项目结构) · [发布到-github](#发布到-github)
+
+---
+
+## 适用场景
+
+- 你已经有一段中文草稿，但读起来过于模板化
+- 你希望去掉“AI 感”，同时不改变原文事实与立场
+- 你需要学术/商务语气下的保守润色，而不是“重写成另一篇文章”
+
+## 功能特性
+
+- AI 模式识别：宏大叙事、机械三点结构、高频套话、模板化结尾
+- 风格保持：学术文本保留正式与严谨，商务文本保留专业简洁
+- 安全边界：不新增事实、不编造来源、不补虚构数据
+- 篇幅控制：输出长度控制在原文的 3/4 到 5/4
+
+## 安装
+
+详细步骤见 [INSTALL.md](INSTALL.md)。
+
+### Claude Code（当前项目安装）
+
+```bash
+mkdir -p .claude/skills
+git clone https://github.com/<your-username>/zh-humanizer .claude/skills/zh-humanizer
 ```
 
-## 快速使用
+### Claude Code（全局安装）
 
-### 方式一：作为 Skill 文件使用
+```bash
+git clone https://github.com/<your-username>/zh-humanizer ~/.claude/skills/zh-humanizer
+```
 
-1. 下载本仓库。
-2. 打开 `SKILL.md`，将其作为你的 Skill 指令来源。
-3. 在需要润色中文文本时触发该 Skill（例如："帮我去掉这段文字的 AI 痕迹"）。
+### PowerShell（Windows）
 
-### 方式二：直接复制规则使用
+```powershell
+New-Item -ItemType Directory -Force .claude/skills | Out-Null
+git clone https://github.com/<your-username>/zh-humanizer .claude/skills/zh-humanizer
+```
 
-1. 将 `SKILL.md` 的规则复制到你的系统提示词或工作流中。
-2. 将待优化原文粘贴给模型，并明确要求：
-   - 不新增事实
-   - 保持原立场
-   - 控制篇幅在 3/4 到 5/4
+## 使用
 
-## 推荐调用示例
+在对话中给出待优化原文，并明确约束。例如：
 
 ```text
 请按 zh-humanizer 规则优化下面这段中文：
@@ -46,27 +67,37 @@ zh-humanizer/
 4) 输出篇幅控制在原文 3/4 到 5/4
 
 原文：
-（在这里粘贴你的文本）
+（在这里粘贴文本）
 ```
 
-## 版本建议
+## 项目结构
 
-- 初始版本：`v1.0.0`
-- 后续更新建议遵循语义化版本（SemVer）：`MAJOR.MINOR.PATCH`
+本项目遵循 AgentSkills 常见组织方式：一个仓库即一个 Skill 目录。
+
+```text
+zh-humanizer/
+├── SKILL.md
+├── references/
+│   └── ai-patterns.md
+├── scripts/
+│   └── publish-to-github.ps1
+├── INSTALL.md
+├── README.md
+├── README_ZH.md
+├── CONTRIBUTING.md
+├── LICENSE
+└── .gitignore
+```
 
 ## 发布到 GitHub
 
-### 1. 在 GitHub 新建空仓库
-
-仓库名建议：`zh-humanizer`
-
-### 2. 在本地仓库根目录执行
+### 一键发布
 
 ```powershell
 ./scripts/publish-to-github.ps1 -RepoUrl "https://github.com/<your-username>/zh-humanizer.git"
 ```
 
-如果你更偏好 SSH，也可以传入：
+或：
 
 ```powershell
 ./scripts/publish-to-github.ps1 -RepoUrl "git@github.com:<your-username>/zh-humanizer.git"
@@ -74,16 +105,14 @@ zh-humanizer/
 
 脚本会自动：
 
-- 配置/更新 `origin` 远程
+- 配置或更新 `origin`
 - 推送当前分支
-- 推送全部标签（包含 `v1.0.0` 与 `v1.0.1`）
+- 推送所有标签
 
 ## 贡献
 
-欢迎提交 Issue 和 Pull Request，帮助补充更多中文 AI 写作模式和高质量改写样例。
+欢迎提交 Issue 和 Pull Request。贡献前请阅读 [CONTRIBUTING.md](CONTRIBUTING.md)。
 
-贡献前请阅读：`CONTRIBUTING.md`
+## License
 
-## 许可证
-
-本项目使用 MIT License，详见 `LICENSE`。
+MIT，详见 [LICENSE](LICENSE)。
