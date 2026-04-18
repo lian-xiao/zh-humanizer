@@ -85,26 +85,6 @@ zh-humanizer/
 └── .gitignore
 ```
 
-## 发布到 GitHub
-
-### 一键发布
-
-```powershell
-./scripts/publish-to-github.ps1 -RepoUrl "https://github.com/<your-username>/zh-humanizer.git"
-```
-
-或：
-
-```powershell
-./scripts/publish-to-github.ps1 -RepoUrl "git@github.com:<your-username>/zh-humanizer.git"
-```
-
-脚本会自动：
-
-- 配置或更新 `origin`
-- 推送当前分支
-- 推送所有标签
-
 ## 贡献
 
 欢迎提交 Issue 和 Pull Request。贡献前请阅读 [CONTRIBUTING.md](CONTRIBUTING.md)。
