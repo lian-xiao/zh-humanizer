@@ -4,6 +4,8 @@
 
 在不改变事实、数据、来源和立场的前提下，识别并消除常见 AI 写作模式，让中文文本更自然、更像真实作者写出来的版本。
 
+如果你想直接复制完整规则，请优先使用融合单文件版本：[SKILL_WITH_PATTERNS.md](SKILL_WITH_PATTERNS.md)。
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![AgentSkills](https://img.shields.io/badge/AgentSkills-Standard-green.svg)](https://agentskills.io)
 
