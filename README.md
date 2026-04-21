@@ -208,13 +208,16 @@ zh-humanizer/
 
 ---
 
-## 参考资源
+## 参考&其他资源
+
+以下资源既包含本项目的参考来源，也包含推荐的其他降 AI 率相关资源。
 
 - [Wikipedia: Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing)：原始指南来源
 - [WikiProject AI Cleanup](https://en.wikipedia.org/wiki/Wikipedia:WikiProject_AI_Cleanup)：维基百科 AI 清理项目
 - [blader/humanizer](https://github.com/blader/humanizer)：原始英文版项目
 - [hardikpandya/stop-slop](https://github.com/hardikpandya/stop-slop)：实用工具部分的灵感来源
 - [Humanizer-zh](https://github.com/op7418/Humanizer-zh)：中文 Humanizer 项目的组织和表达参考
+- [voidborne-d/humanize-chinese](https://github.com/voidborne-d/humanize-chinese)：推荐参考的中文降 AI 率项目，可用于对照不同规则策略
 
 这些资源主要用于两类工作：
 
